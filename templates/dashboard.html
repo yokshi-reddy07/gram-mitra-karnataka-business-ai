@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block title %}Dashboard — Gram Mitra{% endblock %}{% block content %}
+<section class="dashboard-hero"><div><span class="eyebrow">YOUR WORKSPACE</span><h1>Welcome, {{ user.name }} 👋</h1><p>Choose where you want to begin. Your main workflow is Business Analysis.</p></div><div class="dash-badge">Karnataka<br><strong>Business AI</strong></div></section>
+<section class="dash-grid">
+<a href="{{ url_for('analysis') }}" class="dash-card featured"><span>✦ MAIN FEATURE</span><h2>Business Analysis</h2><p>Analyze local opportunity, competitors, seasonality, SWOT, pricing, project cost and financing.</p><b>Start analysis →</b></a>
+<a href="{{ url_for('copilot') }}" class="dash-card"><span>🤖 AI ASSISTANT</span><h2>Gram Mitra Copilot</h2><p>Talk through your business idea in English or ಕನ್ನಡ.</p><b>Open chat →</b></a>
+<a href="{{ url_for('report') }}" class="dash-card"><span>📄 RESULTS</span><h2>Generated Report</h2><p>Your latest analysis is stored in this browser until you create another one.</p><b>View report →</b></a>
+</section>
+<section class="quick-note"><strong>Tip:</strong> Use the live location button on the analysis page, then choose your exact district and taluk for the best context.</section>
+{% endblock %}

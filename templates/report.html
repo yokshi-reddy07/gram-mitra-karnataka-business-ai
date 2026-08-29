@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% block title %}Business Report — Gram Mitra{% endblock %}{% block content %}
+<section class="page-head report-top"><div><span class="eyebrow">ANALYSIS RESULT</span><h1>Business Intelligence Report</h1><p id="reportLocation">Your latest business analysis.</p></div><div class="report-actions"><button class="btn" id="pdfBtn">Download PDF</button><a class="btn btn-ghost" href="{{ url_for('analysis') }}">New Analysis</a></div></section>
+<div id="emptyReport" class="empty-state"><div>📊</div><h2>No analysis yet</h2><p>Run Business Analysis first to generate your report.</p><a class="btn" href="{{ url_for('analysis') }}">Start Analysis</a></div>
+<section id="reportContent" class="report-content hidden">
+ <div class="score-banner"><div><span>BUSINESS VIABILITY SCORE</span><strong id="viability"></strong></div><p id="summary"></p></div>
+ <div class="metrics-grid"><div><span>Project cost</span><b id="projectCost"></b></div><div><span>10% margin needed</span><b id="margin"></b></div><div><span>Indicative 90% finance</span><b id="loan"></b></div><div><span>Quarterly estimate</span><b id="quarterly"></b></div></div>
+ <div class="report-grid">
+  <article><h3>⭐ Best businesses for this context</h3><ul id="bestBusinesses"></ul></article>
+  <article><h3>📈 Market opportunity</h3><p id="marketOpportunity"></p><h4>Competitor density</h4><p id="competition"></p></article>
+  <article><h3>🌦 Seasonal analysis</h3><p id="season"></p></article>
+  <article><h3>💰 Pricing suggestions</h3><p id="pricing"></p><h4>Market reach</h4><p id="marketReach"></p></article>
+  <article><h3>⚠ Threats</h3><ul id="threats"></ul></article>
+  <article><h3>💼 Working capital</h3><p id="workingCapital"></p><h4>Suggested route</h4><p id="scheme"></p></article>
+ </div>
+ <section class="swot-box"><h2>SWOT Analysis</h2><div id="swotGrid"></div></section>
+</section>
+{% endblock %}{% block scripts %}<script src="{{ url_for('static', filename='js/calculator.js') }}"></script>{% endblock %}

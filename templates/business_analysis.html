@@ -1,0 +1,21 @@
+{% extends "base.html" %}{% block title %}Business Analysis — Gram Mitra{% endblock %}{% block content %}
+<section class="page-head"><span class="eyebrow">MAIN FEATURE</span><h1>Business Analysis</h1><p>Tell Gram Mitra where and what you want to build.</p></section>
+<section class="analysis-layout">
+<form id="analysisForm" class="analysis-form">
+ <div class="form-section"><h3>📍 Business location</h3>
+ <button type="button" class="location-btn" id="liveLocation">Use my live location</button>
+ <small id="locationStatus">Browser permission is required for live location.</small>
+ <label>Detected address<input id="address" name="address" placeholder="Filled when location is available"></label>
+ <div class="two-col"><label>District<select id="district" required><option value="">Select district</option></select></label>
+ <label>Taluk<select id="taluk" required><option value="">Select taluk</option></select></label></div>
+ <label>Village / Gram Panchayat <span class="optional">(optional)</span><input id="village" placeholder="Enter village or Gram Panchayat"></label>
+ </div>
+ <div class="form-section"><h3>💼 Business context</h3>
+ <label>Business category<select id="category" required><option value="">Select category</option></select></label>
+ <label>Available margin capital (₹)<input id="capital" type="number" min="0" step="1000" required placeholder="Example: 100000"></label>
+ </div>
+ <button class="btn full" type="submit">Generate Business Analysis →</button>
+</form>
+<aside class="analysis-side"><div class="side-card"><span>WHAT WILL BE ANALYZED</span><ul><li>Viability score</li><li>Best local business directions</li><li>Market & competitors</li><li>Seasonal context</li><li>SWOT & threats</li><li>Pricing & market reach</li><li>Project cost & working capital</li><li>10% margin → 90% finance estimate</li><li>Quarterly repayment estimate</li></ul></div></aside>
+</section>
+{% endblock %}{% block scripts %}<script src="{{ url_for('static', filename='js/location.js') }}"></script><script src="{{ url_for('static', filename='js/calculator.js') }}"></script>{% endblock %}
